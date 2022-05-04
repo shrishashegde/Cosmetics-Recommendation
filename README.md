@@ -24,27 +24,17 @@ In the second step we would like to use content-based recommendation system whic
 As a final step we would like to use t-SNE dimensionality reduction technique to two dimensions and create a scatter plot. Each point in this scatter plot would indicate an item. The items having similar ingredients would appear closer to each other when compared to items having different ingredients.
 
 # Design Implementation
+
+The proposed system offers content-based filtering depending on if the user inputs a product in the beginning. After evaluating the similarity of ingredient composition within products, the system returns 𝑘 number of recommendations for each of the 𝑛 product types.
+
+
+![alt text](/paper/project_flowchart.jpg?raw=true)
+
 ## Data Collection
 
 The data was scraped from sephora.com. This website offers beauty products from multiple brands. Among them six were extracted to focus on skincare products. These categories include moisturizing cream, facial treatments, cleanser, facial mask, eye treatment, and sun protection. Initially we scrapped the product links from the search page for each category and then information about each product is extracted from the links gathered. The data set includes information about the brand, name, price, rank, skin types, and chemical components of each product. The extraction is done using the library ‘Selenium’ that allows data mining from different websites. The data was extracted using the xpath of the element on the html page. This data set will be used specifically to evaluate the efficiency of this method after the implementation of the content-based recommender system.
 
-## Content based filtering
-After the ingredients are extracted and processed they are passed into the recommender system with the user’s skin type. In this cosine similarity is applied to measure the ingredient similarity between products. Basically this is applied to produce k recommendations for n different product categories to rank cosmetics that have similar properties i.e similar ingredient list with the original product.
-All cosmetic items are bought into two-dimensional coordinates. These values are arranged in ascending order from most to least similar products. This process is repeated by passing different product categories to filter data. Splitting the data set into different types allows the system to recommend products across multiple categories.
 
-
-
-
-# Comparisions
- if we use kaggle dataset
-# example analysis
-
-# Conclusion
-
-#
-
-
-# Data Pre-processing
 ## Data cleaning
 Data cleaning is the process of removing the data which is incorrect, wrongly formatted, duplicate data or incomplete dats within the dataset.
 When the data is combined from multiple resources there is lot of duplicate or mislabeled data in combined csv file.
@@ -58,5 +48,40 @@ It removes the data that should not be included in the dataset.
 - Missing values can be filled with the assumptions from the observations but then there a chance of loosing integrity of the data, because the values are filled from assumptions not observations.
 - Can be filled with null values.
 5. Validate the cleaned dataset: before using the cleaned data validate it if it make sense then proceed with the cleaned csv file.
+
+
+
+
+
+## Content based filtering
+After the ingredients are extracted and processed they are passed into the recommender system with the user’s skin type. In this cosine similarity is applied to measure the ingredient similarity between products. Basically this is applied to produce k recommendations for n different product categories to rank cosmetics that have similar properties i.e similar ingredient list with the original product.
+All cosmetic items are bought into two-dimensional coordinates. These values are arranged in ascending order from most to least similar products. This process is repeated by passing different product categories to filter data. Splitting the data set into different types allows the system to recommend products across multiple categories.
+
+Initially, the collected data are filtered by the skin type input of the user. Once the user selects a product of their choice, the system extracts its ingredients and sends it to the recommender system along with the Sephora data set. The list of all ingredients are split into tokens. Once the duplication is checked, each chemical element is given a unique index to be stored in a dictionary. Next, the document term matrix (DTM) is created between the products and corresponding ingredients for each product. An empty matrix is initialized and filled with zeros. Here, the number of rows represents the number of skincare products, and the number of columns represents the number of total ingredients. Then, onehot encoding is used to fill in the cosmetic-ingredient matrix with either 1 (present) or 0 (not present), depending on the existence of ingredients in each product. 
+
+
+# Visualizations
+
+![alt text](/paper/label_histplot.jpg?raw=true)
+
+This plot shows the distribution of products in different categories and it seems that moisturizer has the highest number of products whereas sunscreen holds the least number. This may influence our final prediction.
+
+
+![alt text](/paper/price_boxplot.jpg?raw=true)
+
+Most of the products lie in the range of 0 to $120 but for some premium products we can see that the price exceeds $500. Usually the outliers are dropped or imputed but in this case as the model is based on ingredients we can't impute the price column.
+
+
+![alt text](/paper/price_vs_rank_lineplot.jpg?raw=true)
+
+The graph depicts that higher price of the product does not imply better rank or rating. Variability in rating of products is high from rank 2 to 3.
+
+
+
+
+
+
+
+
 
 
