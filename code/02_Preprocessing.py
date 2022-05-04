@@ -30,6 +30,7 @@ def skin_type_preprocessing(data):
     data['skin_type'] = data['skin_type'].str.replace('and', ',')
     data['skin_type'] = data['skin_type'].str.replace(' ', '')
     data['skin_type'] = data['skin_type'].str.replace(',,', ',')
+    data['skin_type'] = data['skin_type'].str.replace('Oily', 'Oil')
     jp = data['skin_type'].str.split(':', n=1, expand=True)
     data['skin_type'] = jp[1]
     data['skin_type'].replace('', data.mode()['skin_type'][0], inplace=True)
