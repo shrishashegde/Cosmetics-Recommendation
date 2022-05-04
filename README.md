@@ -28,23 +28,7 @@ As a final step we would like to use t-SNE dimensionality reduction technique to
 
 The data was scraped from sephora.com. This website offers beauty products from multiple brands. Among them six were extracted to focus on skincare products. These categories include moisturizing cream, facial treatments, cleanser, facial mask, eye treatment, and sun protection. Initially we scrapped the product links from the search page for each category and then information about each product is extracted from the links gathered. The data set includes information about the brand, name, price, rank, skin types, and chemical components of each product. The extraction is done using the library ‘Selenium’ that allows data mining from different websites. The data was extracted using the xpath of the element on the html page. This data set will be used specifically to evaluate the efficiency of this method after the implementation of the content-based recommender system.
 
-## Content based filtering
-After the ingredients are extracted and processed they are passed into the recommender system with the user’s skin type. In this cosine similarity is applied to measure the ingredient similarity between products. Basically this is applied to produce k recommendations for n different product categories to rank cosmetics that have similar properties i.e similar ingredient list with the original product.
-All cosmetic items are bought into two-dimensional coordinates. These values are arranged in ascending order from most to least similar products. This process is repeated by passing different product categories to filter data. Splitting the data set into different types allows the system to recommend products across multiple categories.
 
-
-
-
-# Comparisions
- if we use kaggle dataset
-# example analysis
-
-# Conclusion
-
-#
-
-
-# Data Pre-processing
 ## Data cleaning
 Data cleaning is the process of removing the data which is incorrect, wrongly formatted, duplicate data or incomplete dats within the dataset.
 When the data is combined from multiple resources there is lot of duplicate or mislabeled data in combined csv file.
@@ -58,5 +42,19 @@ It removes the data that should not be included in the dataset.
 - Missing values can be filled with the assumptions from the observations but then there a chance of loosing integrity of the data, because the values are filled from assumptions not observations.
 - Can be filled with null values.
 5. Validate the cleaned dataset: before using the cleaned data validate it if it make sense then proceed with the cleaned csv file.
+
+
+## Content based filtering
+After the ingredients are extracted and processed they are passed into the recommender system with the user’s skin type. In this cosine similarity is applied to measure the ingredient similarity between products. Basically this is applied to produce k recommendations for n different product categories to rank cosmetics that have similar properties i.e similar ingredient list with the original product.
+All cosmetic items are bought into two-dimensional coordinates. These values are arranged in ascending order from most to least similar products. This process is repeated by passing different product categories to filter data. Splitting the data set into different types allows the system to recommend products across multiple categories.
+
+
+
+
+# Conclusion
+
+
+
+
 
 
