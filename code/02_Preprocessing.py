@@ -50,9 +50,17 @@ def preprocess_price(data):
             data.loc[idx, 'price'] = int(math.ceil(float(curr[1:])))
     return data
 
+def preprocess_rank(data):
+    data.dropna(subset=['rank'], inplace=True)
+    for idx, row in data.iterrows():
+        curr = str(data.loc[idx, 'rank'])
+        data.loc[idx, 'rank'] = float(curr.split(' ')[0])
+    return data    
+
 if __name__ == '__main__':
     df = pd.read_csv('data/cosmetic.csv', na_values={'NA', '#NAME?'})
     clean_data(df)
     df = preprocess_ingredients(df)
     df = skin_type_preprocessing(df)
     df = preprocess_price(df)
+    df = preprocess_rank(df)
