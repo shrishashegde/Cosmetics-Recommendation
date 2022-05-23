@@ -22,3 +22,24 @@ methods while covering their weaknesses.
 There could be some people who share a very similar taste for cosmetics. And with user-user collaborative filtering, we can recommend new products based on the ranking 
 values of this neighboring group. However, the skin type and feature of a person is a more sensitive and ticky problem than just recommending your tonight’s movie show.
 To get the reliability and stability in the recommendation, we need to focus on the real content of each product, or the ingredients of products, and get the similarities based on them. Although a hybrid approach seems to have potential in the skincare domain, it requires a data set that involves both the behavioral information of the user as well as the product information. Such data set, however, is scarce in skincare.
+
+
+## A.	DataSet
+
+The data was scraped from sephora.com. This website offers beauty products from multiple brands. Among them six were extracted to focus on skincare products. These categories include moisturizing cream, facial treatments, cleanser, facial mask, eye treatment, and sun protection. Initially we scrapped the product links from the search page for each category and then information about each product is extracted from the links gathered. The data set includes information about the brand, name, price, rank, skin types, and chemical components of each product. The extraction is done using the library ‘Selenium’ that allows data mining from different websites. The data was extracted using the xpath of the element on the html page. This data set will be used specifically to evaluate the efficiency of this method after the implementation of the content-based recommender system.
+
+## B.	Exploratory Data Analysis
+
+### 1.	Data Preprocessing 
+
+Data preprocessing is a data mining technique which is used to transform the raw data in a useful and efficient format. 
+
+#### Steps Involved in Data Preprocessing:
+#### (A) Data Cleaning
+
+
+#### (B) Outlier Detection
+
+
+
+
