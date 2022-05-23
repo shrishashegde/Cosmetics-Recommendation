@@ -3,7 +3,8 @@ in-store counter recommendations. However, because everyone's skin is different,
 The goal of this proposal is to create a skincare product recommendation system based on the user's skin type and the product's ingredient composition. 
 Product chemical components are identified and products with similar constituent compositions are found using content-based filtering.
 
-#INTRODUCTION
+# INTRODUCTION
+
 With an annual increase in sales, skincare has surpassed makeup as the "fastest-growing category internationally". According to Trefis, a financial research and analysis 
 business, skincare product sales in the United States increased by 13% in 2018, whereas makeup sales only increased by 1% . Trefis also expects the worldwide skincare 
 market to reach $180 billion in the next five years, up more than 30% from where it is now. Customers' desire for natural beauty, as well as men's rising interest in 
