@@ -1,4 +1,6 @@
-Abstract- Consumer interest in cosmetics has risen globally in recent years, with a focus on skincare. Consumers have previously relied on best-seller products or 
+# Abstract
+
+Consumer interest in cosmetics has risen globally in recent years, with a focus on skincare. Consumers have previously relied on best-seller products or 
 in-store counter recommendations. However, because everyone's skin is different, these are ineffective ways for determining whether a product and a person are compatible.
 The goal of this proposal is to create a skincare product recommendation system based on the user's skin type and the product's ingredient composition. 
 Product chemical components are identified and products with similar constituent compositions are found using content-based filtering.
@@ -140,7 +142,20 @@ There are surveys usually conducted to test this kind of data [1]. In this paper
 
 # IV. CONCLUSION AND RESULTS
 
-This report talks about the implementation of Content Based recommendation and TF IDF based recommendation. The bokeh plot in figure 6 shows the plot face_treatment with normal skin type. Each data point in the plot indicates the item and items with similar ingredients appear closer and if we hover over any item tooltip shows the name, brand, cost and rating. By this we can see what items are similar.
+![alt text](/paper/Images/bokeh%20image.png?raw=true)
+
+This report talks about the implementation of Content-Based recommendations and TF IDF-based recommendations. The bokeh plot in figure 6 shows the plot face_treatment with normal skin type. Each data point in the plot indicates the item and items with similar ingredients appear closer and if we hover over an item tooltip shows the name, brand, cost, and rating. By this, we can see what items are similar.
+![alt text](/paper/Images/content_based_filter_result.png?raw=true)
+
+In figure 7 we see the results of the content-based recommendation system. The input is “Peat Miracle Revital Cream”  top 5 items were chosen. The first one is the exact same because the cosine similarity to itself is 1.
+![alt text](/paper/Images/TF_IDF_result.png?raw=true)
+
+In figure 8 we see the results for the TF IDF recommendation system. The ingredients of recommended items were manually compared with the item selected and it was found that TF IDF was slightly better.
+
+# V. LIMITATIONS AND FUTURE RESEARCH
+
+Lack of access to customer information or any survey-based user liking was the main challenge. If this data were available then we can quantify the recommendation systems that are implemented. Once the user data is available we can also implement collaborative filtering and compare the recommendation among all the three recommendation systems.
+
 
 
 
