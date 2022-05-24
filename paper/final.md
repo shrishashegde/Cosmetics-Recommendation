@@ -3,7 +3,7 @@ in-store counter recommendations. However, because everyone's skin is different,
 The goal of this proposal is to create a skincare product recommendation system based on the user's skin type and the product's ingredient composition. 
 Product chemical components are identified and products with similar constituent compositions are found using content-based filtering.
 
-# INTRODUCTION
+# I. INTRODUCTION
 
 With an annual increase in sales, skincare has surpassed makeup as the "fastest-growing category internationally". According to Trefis, a financial research and analysis 
 business, skincare product sales in the United States increased by 13% in 2018, whereas makeup sales only increased by 1% . Trefis also expects the worldwide skincare 
@@ -94,11 +94,57 @@ The document term matrix (DTM) is then created between the products and their co
 
 ### 5.Dimensionality  Reduction
 
-A common problem data scientists face nowadays is dealing with very high-dimensional data (lots of features). Most of the algorithms for classification and prediction that work for low-dimensional datasets don’t work as well when you have many features, a problem commonly referred to as the curse of dimensionality. To solve this, we can reduce the number of dimensions by feature selection or feature extraction, usually handpicking the most relevant features or using Principal Component Analysis (PCA) before feeding the data into our favorite model. Even though PCA is amazing in most scenarios, it still is a linear model, which might not be powerful enough to apply to some datasets. So, we have used t-SNE to reduce the dimensionality of the dataset.
+Dealing with very high-dimensional data is a common issue for data scientists nowadays (lots of features). Most algorithms for classification and prediction that work well with low-dimensional datasets don't work as well with many features, a problem known as the curse of dimensionality. To address this, we can reduce the number of dimensions through feature selection or feature extraction, typically by handpicking the most relevant features or using Principal Component Analysis (PCA) prior to feeding the data into our preferred model. Even though PCA is excellent in most cases, it is still a linear model that may be insufficient for some datasets. So, we have used t-SNE to reduce the dimensionality of the dataset.
 
 t-Distributed Stochastic Neighbor Embedding (t-SNE) is a very popular and state-of-the-art dimensionality reduction technique that is usually used to map high to 2 or 3 dimensions in order to visualize it. It does so by computing affinities between points and trying to maintain these affinities in the new, low-dimensional space.
 
 Using t-SNE on cosmetic-ingredient matrix we have reduced the dimensionality of the cosmetic-ingredient matrix from 452 to 2.
+
+# II. METHODS
+
+## 1. Content-based Filtering: 
+
+The chemicals, together with the user's skin type, are submitted into the recommender system after they have been extracted and processed. This method compares the similarity of item constituent composition using cosine similarity. It's used to rank cosmetics with similar qualities to the original product by generating  recommendations for different product categories.
+
+
+
+Using the resulting matrix, all cosmetic elements are vectorized into two-dimensional coordinates using t-SNE. The cosine similarity equation is used to calculate the distances between various locations using these coordinates. Finally, these values are ranked from most similar to least similar in ascending order. The method is repeated to filter the data by adding more product categories. The system can recommend products from a variety of categories by categorizing the data.
+
+
+
+
+## 2. TF-IDF Filtering:
+
+There is also a different technique that can be used to recommend skincare products based on the product entered. The top recommendations can be identified by calculating the TF-IDF values. The values are derived using the below equations.
+
+
+𝑛𝑝: the number of unique ingredients included in product 𝑝 in
+beauty effect group 𝑋
+𝑚: the number of products in beauty effect group 𝑋
+𝛼𝑝,𝑖: the rank of ingredient 𝑖 listed in product 𝑝
+
+
+
+𝑁: the number of products in the data set
+𝑝𝑓 (𝑖): the number of products including ingredient 𝑖
+
+
+The similarity of the products represented as TF-IDF vectors is computed using the linear kernel. The products that include such ingredients are then filtered. Finally, the top recommendations are returned to the user. 
+
+
+# III. COMPARISONS
+
+The data that was gathered using web scraping consisted of information of ingredients and product type, no information was available of users or customers of the product. So quantifying of recommender systems is not possible this time. However we have manually compared the ingredients of the input product with the recommendations generated and found quite a lot of similarities and found that the TF IDF method of recommendation  was slightly better.
+
+There are surveys usually conducted to test this kind of data [1]. In this paper the user liking is compared with the recommendations and it was found that the TF IDF method was slightly better than Content Based recommendation system.
+
+# IV. CONCLUSION AND RESULTS
+
+This report talks about the implementation of Content Based recommendation and TF IDF based recommendation. The bokeh plot in figure 6 shows the plot face_treatment with normal skin type. Each data point in the plot indicates the item and items with similar ingredients appear closer and if we hover over any item tooltip shows the name, brand, cost and rating. By this we can see what items are similar.
+
+
+
+
 
 
 
