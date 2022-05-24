@@ -1,3 +1,5 @@
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+
 # Cosmetics-Recommendation
 ## CMPE 255 - Term project
 
