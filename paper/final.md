@@ -52,26 +52,38 @@ This step is conducted to convert the data into a format that can be used in the
 
 Data visualization is the graphical representation of information and data. By using visual elements like charts, graphs, and maps, data visualization tools provide an accessible way to see and understand trends, outliers, and patterns in data.
 
-
+![alt text](/paper/Images/Label_analyisis.png?raw=true)
 Fig 1: Distribution of products
 
 Observation: Fig 1 shows the distribution of products in different categories and it seems that moisturizer has the highest number of products whereas sunscreen holds the least number. This may influence our final prediction.
 
+![alt text](/paper/Images/Label_analyisis.png?raw=true)
 Fig 2: Price distribution
 
 Observation: In Fig 2 Most of the products lie in the range of 0 to $120 but for some premium products we can see that the price exceeds $500. Usually, the outliers are dropped or imputed but in this case, as the model is based on ingredients we can't impute the price column.
 
+![alt text](/paper/Images/price_analysis.png?raw=true)
 Fig 3: Rank Vs Price
 
 Observation: In Fig 3 the graph depicts that the higher price of the product does not imply a better rank or rating. Variability in the rating of products is high from rank 2 to 3.
+
+![alt text](/paper/Images/combination_skintype.png?raw=true)
+![alt text](/paper/Images/sensitive_skintype.png?raw=true)
+![alt text](/paper/Images/dry_skintype.png?raw=true)
+![alt text](/paper/Images/mature_skintype.png?raw=true)
+![alt text](/paper/Images/normal_skintype.png?raw=true)
+![alt text](/paper/Images/oil_skintype.png?raw=true)
 
 Fig 4: Product distribution based on Skintype
 
 Observation: In fig 4 shows the distribution of products for each skin type. we can observe that there are negligible amount of products for Mature and Sensitive skin types.
 
+![alt text](/paper/Images/mask.png?raw=true)
+![alt text](/paper/Images/cleanse.png?raw=true)
+
 Fig 5: wordclouds and classification
 
-Observation: This depicts that cleanser mainly contains Sodium, Lauryl, Acid, Water, and Ferment as their main ingredients.And Mask mainly contains Extract, Butylene, Glycol, and Water.
+Observation: Fig 5 depicts that cleanser mainly contains Sodium, Lauryl, Acid, Water, and Ferment as their main ingredients.And Mask mainly contains Extract, Butylene, Glycol, and Water.
 
 ### 4.Ingredient Extraction
 
