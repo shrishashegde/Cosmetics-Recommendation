@@ -144,11 +144,17 @@ There are surveys usually conducted to test this kind of data [1]. In this paper
 
 ![alt text](/paper/Images/bokeh%20image.png?raw=true)
 
+fig.6: Bokeh plot
+
 This report talks about the implementation of Content-Based recommendations and TF IDF-based recommendations. The bokeh plot in figure 6 shows the plot face_treatment with normal skin type. Each data point in the plot indicates the item and items with similar ingredients appear closer and if we hover over an item tooltip shows the name, brand, cost, and rating. By this, we can see what items are similar.
 ![alt text](/paper/Images/content_based_filter_result.png?raw=true)
 
+fig.7: Content based filtering
+
 In figure 7 we see the results of the content-based recommendation system. The input is “Peat Miracle Revital Cream”  top 5 items were chosen. The first one is the exact same because the cosine similarity to itself is 1.
 ![alt text](/paper/Images/TF_IDF_result.png?raw=true)
+
+fig.8: TF IDF based recommendation
 
 In figure 8 we see the results for the TF IDF recommendation system. The ingredients of recommended items were manually compared with the item selected and it was found that TF IDF was slightly better.
 
