@@ -23,6 +23,7 @@ Cosmetics-Recommendation/
 │   └── 05_Visualisation.ipynb
 ├── data
 │   ├── cosmetic.csv
+|   ├── 255 Presentation.pptx
 │   ├── cosmetic_TSNE.csv
 │   └── cosmetic_preprocess.csv
 ├── paper
