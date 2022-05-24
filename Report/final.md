@@ -37,8 +37,59 @@ Data preprocessing is a data mining technique which is used to transform the raw
 #### Steps Involved in Data Preprocessing:
 #### (A) Data Cleaning
 
+The raw data may contain a variety of meaningless and missing items. To deal with this, data cleaning is used. It requires coping with data that is absent or noisy.
 
-#### (B) Outlier Detection
+1.Remove duplicate and unwanted data: Removed unwanted columns like URLs from the dataset.
+
+2.Structural errors must be corrected: Structural error columns Label, ingredients, skin_type, price, and rating were fixed.
+
+3.Handling missing values: We decided to handle the missing data on the bases of columns in which the data is missing. In columns like ingredients, we have dropped the row. And in columns like Skin_type, we replaced it with mode.
+
+### 2.Feature Scaling
+This step is conducted to convert the data into a format that can be used in the mining process. In order to use the skin type data, we apply one-hot encoding on that column.
+
+### 3.Data Visualizations
+
+Data visualization is the graphical representation of information and data. By using visual elements like charts, graphs, and maps, data visualization tools provide an accessible way to see and understand trends, outliers, and patterns in data.
+
+
+Fig 1: Distribution of products
+
+Observation: Fig 1 shows the distribution of products in different categories and it seems that moisturizer has the highest number of products whereas sunscreen holds the least number. This may influence our final prediction.
+
+Fig 2: Price distribution
+
+Observation: In Fig 2 Most of the products lie in the range of 0 to $120 but for some premium products we can see that the price exceeds $500. Usually, the outliers are dropped or imputed but in this case, as the model is based on ingredients we can't impute the price column.
+
+Fig 3: Rank Vs Price
+
+Observation: In Fig 3 the graph depicts that the higher price of the product does not imply a better rank or rating. Variability in the rating of products is high from rank 2 to 3.
+
+Fig 4: Product distribution based on Skintype
+
+Observation: In fig 4 shows the distribution of products for each skin type. we can observe that there are negligible amount of products for Mature and Sensitive skin types.
+
+Fig 5: wordclouds and classification
+
+Observation: This depicts that cleanser mainly contains Sodium, Lauryl, Acid, Water, and Ferment as their main ingredients.And Mask mainly contains Extract, Butylene, Glycol, and Water.
+
+### 4.Ingredient Extraction
+
+Initially, the collected data are filtered based on the user's skin type input. When a user selects a product, the system extracts its ingredients and sends them, along with the Sephora data set, to the recommender system. The list of all ingredients is extracted from the data set's ingredients column and divided into tokens. After the duplication has been checked, each chemical element is assigned a unique index that will be stored in a dictionary.
+
+The document term matrix (DTM) is then created between the products and their corresponding ingredients. An empty matrix is created and then filled with zeros. The number of rows here represents the number of skincare products, while the number of columns represents the total number of ingredients. Then, depending on the presence of ingredients in each product, one-hot encoding is used to fill in the cosmetic-ingredient matrix with either 1 (present) or 0 (not present).
+
+
+### 5.Dimensionality  Reduction
+
+A common problem data scientists face nowadays is dealing with very high-dimensional data (lots of features). Most of the algorithms for classification and prediction that work for low-dimensional datasets don’t work as well when you have many features, a problem commonly referred to as the curse of dimensionality. To solve this, we can reduce the number of dimensions by feature selection or feature extraction, usually handpicking the most relevant features or using Principal Component Analysis (PCA) before feeding the data into our favorite model. Even though PCA is amazing in most scenarios, it still is a linear model, which might not be powerful enough to apply to some datasets. So, we have used t-SNE to reduce the dimensionality of the dataset.
+
+t-Distributed Stochastic Neighbor Embedding (t-SNE) is a very popular and state-of-the-art dimensionality reduction technique that is usually used to map high to 2 or 3 dimensions in order to visualize it. It does so by computing affinities between points and trying to maintain these affinities in the new, low-dimensional space.
+
+Using t-SNE on cosmetic-ingredient matrix we have reduced the dimensionality of the cosmetic-ingredient matrix from 452 to 2.
+
+
+
 
 
 
